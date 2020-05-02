@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>text-Appear Function</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Shrikhand&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #f7e8e1;
+            
+        }
+        .hero__main{
+            width: 90%;
+            height: 100vh;
+            background-image: url(bg3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+        }
+
+        .main__title
+         {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .main__title p{
+           font-family: 'Shrikhand', cursive;
+           font-size: 58px;
+           padding: 20px;
+           color: #FFF;
+           background-color: #ac9f5491;
+           position: absolute;
+           top: 300px;
+           left: 28%;
+        }
+        .secoend{
+            margin-top: 100px;
+        }
+        /* .secoend__title p{
+            text-align: center;
+            font-size: 36px;
+            color: #FFF;
+            text-shadow: 1px 2px 3px  #e9dbd4
+        } */
+        .secoend__main{
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+        .secoend__main .imge{
+            width: 50%;
+        }
+        .imge img{
+            width: 100%;
+        }
+        .intro-text{
+             margin: auto;
+             opacity: 0;
+             transform: translateY(20px);
+             transition: 1s all ease-in-out;
+        }
+        .intro-appear{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .intro-text p{
+            text-align: center;
+            font-size: 18px;
+        }
+        .intro-text .h1{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .intro-text p{
+            padding: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero__main">
+        <div class="main__title">
+            <p>Coffee shop work</p>
+        </div>
+    </div>
+    <!-- No.2 section -->
+    <section class="secoend">
+        <div class="secoend__title p">
+            <!-- <p>Take a look at some of our </p>
+            <p>favourite projects…</p> -->
+        </div>
+        <div class="secoend__main">
+            <div class="imge">
+                <img src="imge1.jpg" alt="">
+            </div>
+            <div class="intro-text">
+                <p class="h1">WHAT WOULD YOU LIKE?</p>
+                <p>Select coffee you would like to subscribe. Every two weeks</p>
+                <p>we rotate coffee so you get new experience. But not Minor</p>
+                <p>Monuments.</p>
+                <p class="h1">WHAT WOULD YOU LIKE?</p>
+                <p>Select coffee you would like to subscribe. Every two weeks</p>
+                <p>we rotate coffee so you get new experience. But not Minor</p>
+                <p>Monuments.</p>
+                <p class="h1">WHAT WOULD YOU LIKE?</p>
+                <p>Select coffee you would like to subscribe. Every two weeks</p>
+                <p>we rotate coffee so you get new experience. But not Minor</p>
+                <p>Monuments.</p>
+
+            </div>
+            
+        </div>
+    </section>
+    <!-- No.2 section -->
+
+    <script>
+        window.onload = function(){
+
+            function scrollAppear(){
+                let introText = document.querySelector('.intro-text');
+                let introPosition = introText.getBoundingClientRect().top;
+                let screenPosition = window.innerHeight/1.2;
+                
+                if(introPosition < screenPosition){
+                    introText.classList.add('intro-appear');
+                }
+            }
+            window.addEventListener("scroll",scrollAppear);
+
+
+        }
+    
+    </script>
+</body>
+</html>
